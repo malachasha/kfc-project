@@ -10,3 +10,10 @@ body {
   font-weight: 700;
   font-size: 16px;
 }
+.carousel-item {
+  max-height: 450px;
+}
+.carousel-item img {
+  max-height: 450px;
+  object-fit: cover;
+}
