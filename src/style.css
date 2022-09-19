@@ -53,3 +53,24 @@ hr {
   margin-left: 16px;
   border-radius: 2px;
 }
+/*Industries served container */
+.industries-header,
+.industries-text {
+  text-align: center;
+}
+.industries hr {
+  margin: 5px auto;
+}
+.industries-header {
+  font-weight: 700;
+  margin-top: 10px;
+  font-size: 35px;
+}
+.industries-text {
+  margin-top: 12px;
+}
+/*Footer*/
+.footer-container {
+  margin-top: 40px;
+  margin-left: 16px;
+}
