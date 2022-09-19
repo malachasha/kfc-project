@@ -54,6 +54,11 @@ hr {
   border-radius: 2px;
 }
 /*Industries served container */
+.industries {
+  background-color: rgba(234, 234, 234, 0.175);
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
 .industries-header,
 .industries-text {
   text-align: center;
@@ -84,12 +89,29 @@ hr {
   border-radius: 30px;
   font-size: 18px;
   text-align: center;
+  font-weight: 700;
 }
 .grid-item:hover {
   background-color: rgb(255, 255, 255);
 }
+/*Main info container*/
+.main-info-cont {
+  background-color: rgba(234, 234, 234, 0.359);
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+.main-info-text {
+  text-align: center;
+}
+.main-info-text h4 {
+  font-weight: bold;
+}
+.main-info-img {
+  margin-left: 100px;
+  margin-top: 20px;
+}
+
 /*Footer*/
 .footer-container {
-  margin-top: 40px;
-  margin-left: 16px;
+  margin: 30px 0px 30px 40px;
 }
