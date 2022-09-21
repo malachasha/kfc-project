@@ -131,3 +131,67 @@ hr {
   background-color: rgba(234, 234, 234, 0.359);
   padding-left: 10%;
 }
+
+/*Contact page*/
+.form-container {
+  margin-top: 80px;
+  padding: 40px 6% 10% 8%;
+}
+.form-text {
+  padding-right: 3%;
+}
+.form-text h1,
+strong {
+  font-weight: 700;
+  color: black;
+}
+.form-text hr {
+  width: 80%;
+  margin-left: 0;
+}
+.form-text p {
+  color: black;
+  font-size: 1rem;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+textarea.form-control {
+  height: auto;
+}
+input:not([type="checkbox"]):not([type="radio"]),
+select {
+  line-height: 18px;
+  padding: 10px 16px;
+  min-height: 40px;
+  font-size: 0.9rem;
+}
+#submit-btn {
+  background-color: #2a6348;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 30px;
+  border: 1px solid transparent;
+  padding: 15px 20px;
+  transition: 200ms ease-in-out;
+}
+#submit-btn:hover {
+  background-color: #214d39;
+}
+.form-container label {
+  margin-top: 20px;
+  margin-bottom: 14px;
+  font-weight: 700;
+}

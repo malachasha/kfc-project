@@ -25,6 +25,7 @@
     <title>KFC - CONTACTS</title>
   </head>
   <body>
+    <!--Navigation bar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-lg">
       <div class="container-fluid">
         <img
@@ -61,7 +62,89 @@
         </div>
       </div>
     </nav>
+    <!--Container with form-->
+    <div class="row form-container">
+      <div class="col-sm-5 form-text pt-sm-5">
+        <h1>GET IN TOUCH</h1>
+        <hr />
+        <p>
+          We look forward to producing forgings for your applications. Please
+          let us know of your requirements. We are happy to review your rfq. KDK
+          produces forgins in quantities of 100 or more typically.
+          <br /><br /><br />
+          <strong> KFC Limited Liability Company</strong><br />
+          Volodymyrska street, 150 <br />Kovel, Ukraine 45006 <br />P: +38 (067)
+          388-87-84
+        </p>
+      </div>
+      <div class="col-sm-7">
+        <form action="">
+          <div class="row">
+            <div class="col-sm-6">
+              <label for="fname">Name:</label><br />
+              <input
+                type="text"
+                id="fname"
+                class="form-control"
+                name="fname"
+                placeholder="Enter your name"
+              />
+            </div>
+            <div class="col-sm-6">
+              <label for="femail">Email:</label><br />
+              <input
+                type="email"
+                id="femail"
+                class="form-control"
+                name="femail"
+                placeholder="Enter your Email"
+              />
+            </div>
+          </div>
 
+          <div class="row">
+            <div class="col-sm-6">
+              <label for="lcsubject">Your Subject:</label><br />
+              <input
+                type="text"
+                id="lsubject"
+                class="form-control"
+                name="lsubject"
+                placeholder="Subject.."
+              />
+            </div>
+            <div class="col-sm-6">
+              <label for="fcompany">Company:</label><br />
+              <input
+                type="text"
+                id="fcompany"
+                class="form-control"
+                name="fcompany"
+                placeholder="Company..."
+              />
+            </div>
+          </div>
+          <label for="fmessage">Message:</label><br />
+          <textarea
+            name="comment"
+            rows="4"
+            class="form-control"
+            form="usrform"
+            placeholder="Enter your message here..."
+          ></textarea
+          ><br />
+          <label for="myfile">Attachment file*</label><br />
+          <input type="file" id="myfile" name="myfile" /><br /><br />
+
+          <input
+            type="submit"
+            value="✉️ SEND MESSAGE"
+            id="submit-btn"
+            class="btn btn-success shadow"
+          />
+        </form>
+      </div>
+    </div>
     <!--Main info container-->
     <div class="row main-info-cont">
       <div class="col-md-4 row">
