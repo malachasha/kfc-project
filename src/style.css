@@ -115,3 +115,19 @@ hr {
 .footer-container {
   margin: 30px 0px 30px 40px;
 }
+
+/*Products page*/
+.products-header {
+  margin: 60px 0px 40px;
+  text-align: center;
+}
+.products-header h1 {
+  font-weight: 700;
+}
+.product-img img {
+  min-width: 290px;
+}
+.products-list {
+  background-color: rgba(234, 234, 234, 0.359);
+  padding-left: 10%;
+}
