@@ -47,6 +47,35 @@ body {
   float: right;
   margin-right: 25px;
 }
+
+.chart {
+  background: #e9ecef;
+  justify-content: flex-start;
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  height: 16px;
+  margin-left: 16px;
+}
+
+.bar {
+  animation: load 3s normal forwards;
+  box-shadow: 0 10px 40px -10px rgb(135, 135, 135);
+  border-radius: 4px;
+  background: #2a6348;
+  height: 16px;
+  width: 0;
+}
+
+@keyframes load {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
 hr {
   width: 50%;
   border-top: 4px solid black;
@@ -78,11 +107,9 @@ hr {
 .grid-container {
   background-color: rgba(155, 153, 153, 0.6);
   border-radius: 30px;
-  padding: 80px;
   width: 80%;
   margin: 40px auto;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding: 15px 20px 15px;
 }
 .grid-item {
   background-color: rgba(255, 255, 255, 0.8);

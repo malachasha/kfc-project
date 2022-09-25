@@ -1,5 +1,3 @@
-//form validation
-
 let nameError = document.querySelector("#name-error");
 let emailError = document.querySelector("#email-error");
 let subjectError = document.querySelector("#subject-error");
