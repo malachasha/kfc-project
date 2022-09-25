@@ -195,3 +195,18 @@ select {
   margin-bottom: 14px;
   font-weight: 700;
 }
+
+#name-error,
+#email-error,
+#subject-error,
+#company-error,
+#message-error,
+.submit-error {
+  color: red;
+  font-size: 12px;
+}
+
+.submit-error {
+  margin-top: 16px;
+  margin-left: 16px;
+}

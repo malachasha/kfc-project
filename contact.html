@@ -81,58 +81,68 @@
         <form action="">
           <div class="row">
             <div class="col-sm-6">
-              <label for="fname">Name:</label><br />
+              <label for="fname">Full Name:</label><br />
               <input
                 type="text"
                 id="fname"
                 class="form-control"
                 name="fname"
                 placeholder="Enter your name"
+                onkeyup="validateName()"
               />
+              <span id="name-error"></span>
             </div>
             <div class="col-sm-6">
-              <label for="femail">Email:</label><br />
+              <label for="email">Email:</label><br />
               <input
                 type="email"
-                id="femail"
+                id="email"
                 class="form-control"
-                name="femail"
+                name="email"
                 placeholder="Enter your Email"
+                onkeyup="validateEmail()"
               />
+              <span id="email-error"></span>
             </div>
           </div>
 
           <div class="row">
             <div class="col-sm-6">
-              <label for="lcsubject">Your Subject:</label><br />
+              <label for="subject">Your Subject:</label><br />
               <input
                 type="text"
-                id="lsubject"
+                id="subject"
                 class="form-control"
-                name="lsubject"
+                name="subject"
                 placeholder="Subject.."
+                onkeyup="validateSubject()"
               />
+              <span id="subject-error"></span>
             </div>
             <div class="col-sm-6">
-              <label for="fcompany">Company:</label><br />
+              <label for="company">Company:</label><br />
               <input
                 type="text"
-                id="fcompany"
+                id="company"
                 class="form-control"
-                name="fcompany"
+                name="company"
                 placeholder="Company..."
+                onkeyup="validateCompany()"
               />
+              <span id="company-error"></span>
             </div>
           </div>
-          <label for="fmessage">Message:</label><br />
+          <label for="message">Message:</label><br />
           <textarea
-            name="comment"
+            name="message"
             rows="4"
             class="form-control"
             form="usrform"
+            id="message"
             placeholder="Enter your message here..."
-          ></textarea
-          ><br />
+            onkeyup="validateMessage()"
+          ></textarea>
+          <span id="message-error"></span><br />
           <label for="myfile">Attachment file*</label><br />
           <input type="file" id="myfile" name="myfile" /><br /><br />
 
@@ -142,6 +152,7 @@
             id="submit-btn"
             class="btn btn-success shadow"
           />
+          <span class="submit-error"></span>
         </form>
       </div>
     </div>
@@ -201,5 +212,6 @@
         >
       </footer>
     </div>
+    <script src="/src/main.js"></script>
   </body>
 </html>
