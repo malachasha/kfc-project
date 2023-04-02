@@ -17,6 +17,7 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+   
     <link rel="stylesheet" href="src/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -80,7 +81,7 @@
         </p>
       </div>
       <div class="col-sm-7">
-        <form action="">
+        <form action="/src/sender.php" method="post">
           <div class="row">
             <div class="col-sm-6">
               <label for="fname">Full Name:</label><br />
@@ -145,19 +146,34 @@
             onkeyup="validateMessage()"
           ></textarea>
           <span id="message-error"></span><br />
-          <label for="myfile">Attachment file*</label><br />
-          <input type="file" id="myfile" name="myfile" /><br /><br />
-
-          <input
+          <div class="file">
+            <div class="file__item">
+              <label for="myfile">Attachment file*</label>
+              <input id="formImage" accept=".jpg, .gif, .png" type="file" name="myfile" class="file__input" />
+              <div class="file__button" id="file__btn">Choose</div>
+            </div>
+            <div id="formPreview" class="file__preview"></div>
+            </div>
+            <div class="checkbox">
+              <input type="checkbox" name="agreement" class="checkbox__input" id="formAgreement">
+              <label for="formAgreement" class="checkbox__label"> * I have read the <a href="/policy.html">Terms & Conditions Privacy Policy</a></label>
+            </div>
+            <button type="submit" id="submit-btn" class="btn btn-success shadow">✉️ SEND MESSAGE</button>
+            <span class="submit-error"></span>
+  
+          </div>
+          
+          <!--<input
             type="submit"
             value="✉️ SEND MESSAGE"
             id="submit-btn"
             class="btn btn-success shadow"
-          />
-          <span class="submit-error"></span>
+          />--> 
+         
         </form>
       </div>
     </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2500.0456029381016!2d24.673439976272377!3d51.19981137174502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47243bb855b04343%3A0x39e1c1067aba9057!2z0YPQuy4g0JLQu9Cw0LTQuNC80LjRgNGB0LrQsNGPLCAxNTAsINCa0L7QstC10LvRjCwg0JLQvtC70YvQvdGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCDQo9C60YDQsNC40L3QsCwgNDUwMDA!5e0!3m2!1sru!2snl!4v1680103488013!5m2!1sru!2snl" class="googlemap" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     <!--Main info container-->
     <div class="row main-info-cont">
       <div class="col-md-4 row">
@@ -175,7 +191,7 @@
       </div>
       <div class="col-md-4 row">
         <div class="col-2 main-info-img">
-          <img src="/img/placeholder.png" width="50px" alt="placeholder" />
+          <a href="https://goo.gl/maps/do1erCzSRGEnZhfz9" target="_blank"><img src="/img/placeholder.png" width="50px" alt="placeholder"/> </a>
         </div>
 
         <div class="col-5 main-info-text">
@@ -209,11 +225,11 @@
     <div class="footer-container">
       <footer>
         <span class="text-muted" style="font-size: 13px"
-          >© Copyright 2022 KFC Limited Liability Company. All Rights
+          >© Copyright 2023 KFC Limited Liability Company. All Rights
           Reserved.</span
         >
       </footer>
-    </div>
+    </div>  
     <script src="/src/main.js"></script>
   </body>
 </html>

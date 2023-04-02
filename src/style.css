@@ -162,7 +162,7 @@ hr {
 /*Contact page*/
 .form-container {
   margin-top: 80px;
-  padding: 40px 6% 10% 8%;
+  padding: 0px 6% 10% 8%;
 }
 .form-text {
   padding-right: 3%;
@@ -212,7 +212,11 @@ select {
   border-radius: 30px;
   border: 1px solid transparent;
   padding: 15px 20px;
+  margin-top: 15px;
   transition: 200ms ease-in-out;
+  -webkit-box-shadow: 32px 33px 80px 8px rgba(122,111,122,0.95);
+  -moz-box-shadow: 32px 33px 80px 8px rgba(122,111,122,0.95);
+  box-shadow: 32px 33px 80px 8px rgba(122,111,122,0.95);
 }
 #submit-btn:hover {
   background-color: #214d39;
@@ -235,5 +239,91 @@ select {
 
 .submit-error {
   margin-top: 16px;
-  margin-left: 16px;
+ 
+}
+
+.file__item{
+  position: relative;
+
+}
+.file__input{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  font-size: 0;
+  cursor: pointer;
+
+}
+
+.file__button{
+  display: inline-flex;
+  min-height: 40px;
+  border-radius: 30px;
+  justify-content: center;
+  align-items: center;
+  background-color: #afd2b3;
+  font-weight: bold;
+  padding: 0px 20px;
+  -webkit-box-shadow: 32px 33px 80px 8px rgba(122,111,122,0.55);
+  -moz-box-shadow: 32px 33px 80px 8px rgba(122,111,122,0.55);
+  box-shadow: 32px 33px 80px 8px rgba(122,111,122,0.55); 
+}
+
+.file__preview{
+  display: inline-block;
+  max-width: 100px;
+  padding-top: 10px;
+}
+.file__preview img{
+  max-width: 100%;
+}
+
+.checkbox__input{
+  display: none;
+
+}
+
+.checkbox__input:checked + .checkbox__label::after{
+ transform: scale(1);
+}
+
+.checkbox__label{
+  display: inline;
+  position: relative;
+}
+.checkbox__label a{
+  color: inherit;
+}
+.checkbox__label::before{
+  content: ".....";
+  align-self: flex-start;
+  flex: 0 0 24px;
+  height: 24px;
+  color: #f3f3f3;
+  background-color: f3f3f3;
+  border: 2px groove #4a4848;
+  border-radius: 12px; 
+}
+.checkbox__label::after{
+  transition: transform 0.5s ease 0s;
+  content: ".....";
+  position: absolute;
+  height: 20px;
+  top: 0px;
+  left: 1px;
+  color: #324236;
+  background-color: #324236;
+  border: 1px groove #324236;
+  border-radius: 12px; 
+  transform: scale(0);
+}
+
+
+.googlemap{
+  width: 40%;
+  height: 400px;
+  padding: 15px 40px;
 }
