@@ -1,9 +1,11 @@
+//form validation
 let nameError = document.querySelector("#name-error");
 let emailError = document.querySelector("#email-error");
 let subjectError = document.querySelector("#subject-error");
 let companyError = document.querySelector("#company-error");
 let messageError = document.querySelector("#message-error");
 let submitError = document.querySelector(".submit-error");
+let agreementError = document.querySelector("#agreement-error");
 
 function validateName() {
   const name = document.getElementById("fname").value;
@@ -64,6 +66,15 @@ function validateCompany() {
   return true;
 }
 
+function validateAgreement(){
+  if(document.getElementById('formAgreement').checked !=1){
+    agreementError.innerHTML = "Agreement is required";
+    return false;   
+  }
+  agreementError.innerHTML = " ";
+  return true;
+}
+
 let btn = document.querySelector("#submit-btn");
 function validateForm() {
   if (
@@ -71,6 +82,7 @@ function validateForm() {
     !validateEmail() ||
     !validateSubject() ||
     !validateCompany() ||
+    !validateAgreement() ||
     !validateMessage()
   ) {
     submitError.style.display = "block";

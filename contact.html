@@ -60,6 +60,7 @@
               >HOME</a
             >
             <a class="nav-link px-3" href="/products.html">PRODUCTS</a>
+            <a class="nav-link px-3" href="/materials.html">MATERIALS</a>
             <a class="nav-link active px-3" href="/contact.html">CONTACTS</a>
           </div>
         </div>
@@ -158,6 +159,7 @@
               <input type="checkbox" name="agreement" class="checkbox__input" id="formAgreement">
               <label for="formAgreement" class="checkbox__label"> * I have read the <a href="/policy.html">Terms & Conditions Privacy Policy</a></label>
             </div>
+            <span id="agreement-error"></span><br />
             <button type="submit" id="submit-btn" class="btn btn-success shadow">✉️ SEND MESSAGE</button>
             <span class="submit-error"></span>
   
@@ -173,7 +175,7 @@
         </form>
       </div>
     </div>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2500.0456029381016!2d24.673439976272377!3d51.19981137174502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47243bb855b04343%3A0x39e1c1067aba9057!2z0YPQuy4g0JLQu9Cw0LTQuNC80LjRgNGB0LrQsNGPLCAxNTAsINCa0L7QstC10LvRjCwg0JLQvtC70YvQvdGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCDQo9C60YDQsNC40L3QsCwgNDUwMDA!5e0!3m2!1sru!2snl!4v1680103488013!5m2!1sru!2snl" class="googlemap" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+   
     <!--Main info container-->
     <div class="row main-info-cont">
       <div class="col-md-4 row">
@@ -225,8 +227,8 @@
     <div class="footer-container">
       <footer>
         <span class="text-muted" style="font-size: 13px"
-          >© Copyright 2023 KFC Limited Liability Company. All Rights
-          Reserved.</span
+          > <a href="/policy.html" id="privpolicy">Privacy Policy</a><br />© Copyright 2023 KFC Limited Liability Company. All Rights
+          Reserved. </span
         >
       </footer>
     </div>  

@@ -66,6 +66,22 @@ body {
   height: 16px;
   width: 0;
 }
+.progress-bar {
+  animation: load2 3s normal forwards;
+  box-shadow: 0 10px 40px -10px rgb(135, 135, 135);
+  border-radius: 4px;
+  background: #2a6348;
+  height: 16px;
+  width: 0;
+}
+.progress-bar3 {
+  animation: load3 3s normal forwards;
+  box-shadow: 0 10px 40px -10px rgb(135, 135, 135);
+  border-radius: 4px;
+  background: #2a6348;
+  height: 16px;
+  width: 0;
+}
 
 @keyframes load {
   0% {
@@ -73,6 +89,22 @@ body {
   }
   100% {
     width: 100%;
+  }
+}
+@keyframes load2 {
+  0% {
+    width: 0;
+  }
+  87% {
+    width: 87%;
+  }
+}
+@keyframes load3 {
+  0% {
+    width: 0;
+  }
+  70% {
+    width: 70%;
   }
 }
 
@@ -232,7 +264,7 @@ select {
 #subject-error,
 #company-error,
 #message-error,
-.submit-error {
+.submit-error, #agreement-error {
   color: red;
   font-size: 12px;
 }
@@ -321,9 +353,61 @@ select {
   transform: scale(0);
 }
 
-
-.googlemap{
-  width: 40%;
-  height: 400px;
-  padding: 15px 40px;
+#privpolicy{
+  color: inherit;
 }
+.policy-header h1, .materials-header h1{
+  font-weight: 700;
+  font-size: 35px;
+  text-align: center;
+  margin-top: 100px;
+}
+.policy-text h4{
+  font-weight:500;
+  font-size: 25px;  
+}
+.material-text h3{
+  font-weight:500;
+  text-align: center;
+}
+.policy-text, .material-text{
+  font-weight:200;
+  margin: 40px;
+  
+}
+.material-text{
+  background-color: #b7b7b71c;
+  padding-top: 30px;
+  margin: 40px auto;
+}
+
+table.customTable {
+  width: 70%;
+  background-color: #444444;
+  border-collapse: separate;
+  border-width: 2px;
+  border-color: #313337;
+  border-style: solid;
+  border-radius: 20px;
+  color: #000000;
+  margin: 0 auto;
+  -webkit-box-shadow: 40px 36px 152px -55px rgba(0,0,0,0.61);
+-moz-box-shadow: 40px 36px 152px -55px rgba(0,0,0,0.61);
+box-shadow: 40px 36px 152px -55px rgba(0,0,0,0.61);
+}
+
+table.customTable td, table.customTable th {
+  border-width: 3px;
+  border-color: #313337;
+  background-color: #FFFFFF;
+  border-style: solid;
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
+}
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #e0e8cf;
+}
+
+
+
