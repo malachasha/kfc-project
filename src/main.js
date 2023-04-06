@@ -94,40 +94,12 @@ function validateForm() {
   }
 }
 //form validation and its sending by e-mail
-document.addEventListener('DOMContentLoaded', function () {
-  const form =document.querySelector('form');
-  form.addEventListener('submit', formSend);
- 
-  async function formSend(e){
-    e.preventDefault();
-    let error = validateForm(); 
-
-    let formData = new FormData(form);
-    formData.append('image', formImage.files[0]);
-
-    if (error === 0){
-      form.classList.add('_sending');
-      let  response = await fetch('sender.php' , {
-        method: 'POST',
-        body: formData
-      });
-      if (response.ok){
-        let result = await response.json();
-        alert(result.message);
-        formPreview.innerHTML = ' ';
-        form.reset();
-      }else{
-        alert("Failed attempt.");
-      }
-
-    }
-
+  
+const form = document.querySelector('form');
+form.addEventListener('submit', validateForm());
     
-  }
-   //btn.addEventListener("click", function (event) {
-  //event.preventDefault();
-  //validateForm(); 
-});
+
+
 
 //function that displays downloaded photo in form
 const formImage = document.getElementById('formImage');
