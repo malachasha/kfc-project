@@ -3,13 +3,13 @@ var productTable = document.getElementById("product-table").getElementsByTagName
 var totalCost = 0;
 
 function addProduct() {
-  // Get the selected product and amount
+  // 
   var productSelect = document.getElementById("product-select");
   var productAmount = parseInt(document.getElementById("product-amount").value);
   var selectedProduct = productSelect.options[productSelect.selectedIndex];
   
   // Add the product to the table if it hasn't already been added
-  if (selectedProduct.value && productAmount > 0) {
+  if (selectedProduct.value && productAmount >= 100) {
     // Check if the product is already in the table
     var existingRow = productTable.querySelector("tr[data-value='" + selectedProduct.value + "']");
     

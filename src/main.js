@@ -93,12 +93,6 @@ function validateForm() {
     return false;
   }
 }
-//form validation and its sending by e-mail
-  
-const form = document.querySelector('form');
-form.addEventListener('submit', validateForm());
-    
-
 
 
 //function that displays downloaded photo in form
@@ -125,3 +119,8 @@ function uploadFile(file){
   };
   reader.readAsDataURL(file);
 }
+
+//form validation and its sending by e-mail
+  
+const form = document.querySelector('form');
+form.addEventListener('submit', validateForm);

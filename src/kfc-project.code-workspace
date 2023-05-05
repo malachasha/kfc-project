@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../../Downloads/PHPMailer-6.8.0"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "kfc-project",
+		"liveServer.settings.port": 5501
+	}
+}
