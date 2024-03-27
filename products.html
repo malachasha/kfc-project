@@ -31,6 +31,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
+  var pageType = 'products page'; 
+        dataLayer.push({
+            'event': 'page_view',
+            'page_type': pageType
+        });
+
   gtag('config', 'G-BYKXMYKZ5N');
 </script>
     <link rel="stylesheet" href="src/style.css" />
