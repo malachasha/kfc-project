@@ -232,8 +232,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               // Push event to dataLayer indicating successful login
             dataLayer.push({
                 'event': 'login_success',
-                'user_id': result.user.uid,
-                'user_email': result.user.email
+                'user_email': user.email
             });
               //window.location.href = "/index.html"; // Redirect to home page
               alert("You have been successfully logged in!"); 
