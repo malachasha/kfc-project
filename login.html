@@ -96,7 +96,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </nav>
     <!--Login container-->
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5" id="mainContent">
+      <div id="loginFormContent">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card">
@@ -118,12 +119,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
         </div>
+      </div>
+      <!-- log out (Initially hidden) -->
+        <div id="userInfoContent" style="display: none;">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Welcome, <span id="userName"></span></h5>
+                            <button type="button" id="logoutButton" class="btn btn-danger">Log Out</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- Error message (Initially hidden) -->
+         <div id="errorMessage" class="alert alert-danger" style="display: none;"></div>
+
     </div>
+    <!--Logout container-->
 
      <!-- Firebase configuration -->
      <script type="module">
         import { initializeApp } from "https://cdn.skypack.dev/firebase/app";
-        import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword } from "https://cdn.skypack.dev/firebase/auth";
+        import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://cdn.skypack.dev/firebase/auth";
        
        // Firebase project configuration
         const firebaseConfig = {
@@ -139,20 +159,56 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
 
+
+        // Function to show login form content and hide user info content
+         function showLoginForm() {
+            document.getElementById("loginFormContent").style.display = "block";
+            document.getElementById("userInfoContent").style.display = "none";
+         }
+
+        // Function to show user info content and hide login form content
+        function showUserInfo(user) {
+            document.getElementById("loginFormContent").style.display = "none";
+            document.getElementById("userInfoContent").style.display = "block";
+            document.getElementById("userName").textContent = user.displayName || user.email;
+        }
+
+         // Function to show error message
+         function showError(message) {
+            const errorMessageElement = document.getElementById("errorMessage");
+            errorMessageElement.textContent = message;
+            errorMessageElement.style.display = "block";
+            setTimeout(() => {
+        errorMessageElement.style.display = "none";
+    }, 5000); // Hide after 5 seconds (5000 milliseconds)
+        }
+
+        // Check if user is logged in
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // User is signed in
+                showUserInfo(user);
+            } else {
+                // No user is signed in
+                showLoginForm();
+            }
+        });
+
+
         // Google sign-in button click event
         document.getElementById("googleSignIn").addEventListener("click", function() {
         const provider = new GoogleAuthProvider();
         signInWithPopup(auth, provider)
            .then((result) => {
              // Log user information
-             console.log("User signed in:", result.user);
-             // Redirect and show message on successful login
-             window.location.href = "/index.html"; // Redirect to home page
+             console.log("User signed in:", result.user);        
+             //window.location.href = "/index.html"; // Redirect to home page
              alert("You have been successfully logged in!"); // Show success message
            })
             .catch((error) => {
              // Handle login error
              console.error("Error signing in:", error.message);
+             showError(errorMessage);
            });
         });
        
@@ -167,7 +223,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               // Signed in
               const user = userCredential.user;
               console.log("User signed in:", user);
-              window.location.href = "/index.html"; // Redirect to home page
+              //window.location.href = "/index.html"; // Redirect to home page
               alert("You have been successfully logged in!"); 
             })
             .catch((error) => {
@@ -175,8 +231,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               const errorMessage = error.message;
               // Handle login error
               console.error(errorMessage);
+              showError(errorMessage);
             });
         });
+
+        // Logout button click event
+        document.getElementById("logoutButton").addEventListener("click", function() {
+            signOut(auth)
+                .then(() => {
+                    // Sign-out successful
+                    console.log("User signed out");
+                })
+                .catch((error) => {
+                    // An error happened
+                    console.error("Error signing out:", error.message);
+                });
+        });
+
       </script>
   
 
