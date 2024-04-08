@@ -141,8 +141,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         // Google sign-in button click event
         document.getElementById("googleSignIn").addEventListener("click", function() {
-        const provider = new firebase.auth.GoogleAuthProvider();
-        firebase.auth(app).signInWithPopup(provider)
+        const provider = new GoogleAuthProvider();
+        signInWithPopup(auth, provider)
            .then((result) => {
              // Log user information
              console.log("User signed in:", result.user);
@@ -162,11 +162,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           const email = document.getElementById("email").value;
           const password = document.getElementById("password").value;
   
-          firebase.auth(app).signInWithEmailAndPassword(email, password)
+          signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
               // Signed in
               const user = userCredential.user;
-              console.log("User signed in:", result.user);
+              console.log("User signed in:", user);
               window.location.href = "/index.html"; // Redirect to home page
               alert("You have been successfully logged in!"); 
             })
