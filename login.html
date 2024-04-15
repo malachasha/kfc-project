@@ -142,9 +142,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
      <!-- Firebase configuration -->
      <script type="module">
+
         import { initializeApp } from "https://cdn.skypack.dev/firebase/app";
         import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://cdn.skypack.dev/firebase/auth";
-       
+        
+
        // Firebase project configuration
         const firebaseConfig = {
           apiKey: "AIzaSyBSKt1tz9oNcqzOwHB8dUaUe_g234b2blY",
@@ -217,7 +219,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
              showError(errorMessage);
            });
         });
-       
+     
         // Login form submission
         document.getElementById("loginForm").addEventListener("submit", function(event) {
           event.preventDefault();
@@ -258,7 +260,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     console.error("Error signing out:", error.message);
                 });
         });
-
+      
       </script>
   
 
