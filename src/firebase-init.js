@@ -1,4 +1,6 @@
 // firebase-init.js
+import { initializeApp } from "https://cdn.skypack.dev/firebase/app.js";
+import { getFirestore, collection, getDocs, addDoc } from "https://cdn.skypack.dev/firebase/firestore.js";
 
   // Firebase configuration
   const firebaseConfig = {
@@ -11,7 +13,28 @@
   };
   
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+  const app = initializeApp(firebaseConfig);
   
   // Reference to Firestore database
-  const db = firebase.firestore();
+  const db = getFirestore(app);
+  
+// Access Firestore collection and log products
+const querySnapshot = await getDocs(collection(db, "products"));
+querySnapshot.forEach((doc) => {
+  console.log(`Document ID: ${doc.id}`);
+  console.log(JSON.stringify(doc.data(), null, 2)); // Convert to JSON string with 2-space indentation
+  console.log("-------------------------------------------");
+});
+
+//adding new product to 'products' collection
+/*try {
+  const docRef = await addDoc(collection(db, "products"), {
+    name: "new product",
+    last: "Lovelace",
+    size: 1815
+  });
+  console.log("Document written with ID: ", docRef.id);
+} catch (e) {
+  console.error("Error adding document: ", e);
+} */
+
