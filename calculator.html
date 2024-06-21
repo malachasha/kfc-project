@@ -364,6 +364,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
    // Function to set button color based on feature flag
     function setButtonColor() {
         var variant = posthog.getFeatureFlagPayload('request-color');
+        console.log('Assigned variant:', variant); 
         var button = document.getElementById('test-btn-req');
         if (variant === 'red') {
             button.style.backgroundColor = 'red';
@@ -376,6 +377,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     // Ensure the button color is set when the page loads
     posthog.onFeatureFlags(function() {
+       console.log('Feature flags loaded');
         setButtonColor();
     });
 
@@ -383,6 +385,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     function trackButtonClick() {
         var button = document.getElementById('test-btn-req');
         var variant = button.dataset.variant;
+       console.log('Button clicked with variant:', variant); 
         posthog.capture('button_click', {
             "$feature/request-color": variant
         });
