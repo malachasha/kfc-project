@@ -361,15 +361,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   // Initialize PostHog
   posthog.init('phc_A4euCk8t6ZbGLUmZM6tEfI35SA0eURsoKdArAJPaWGf', { api_host: 'https://app.posthog.com' });
 
-  // Function to track button clicks
-  function trackButtonClick() {
-    posthog.capture('button_click', {
-      'button_color': document.getElementById('test-btn-req').style.backgroundColor
-    });
-  }
+   // Function to set button color based on feature flag
+    function setButtonColor() {
+        var variant = posthog.getFeatureFlagPayload('request-color');
+        var button = document.getElementById('test-btn-req');
+        if (variant === 'red') {
+            button.style.backgroundColor = 'red';
+        } else if (variant === 'black') {
+            button.style.backgroundColor = 'black';
+        }
+        // Store variant information in the button element for later use
+        button.dataset.variant = variant;
+    }
 
-  // Attach the event listener to the button
-  document.getElementById('test-btn-req').addEventListener('click', trackButtonClick);
+    // Ensure the button color is set when the page loads
+    posthog.onFeatureFlags(function() {
+        setButtonColor();
+    });
+
+    // Function to track button clicks with variant information
+    function trackButtonClick() {
+        var button = document.getElementById('test-btn-req');
+        var variant = button.dataset.variant;
+        posthog.capture('button_click', {
+            "$feature/request-color": variant
+        });
+    }
+
+    // Attach the event listener to the button
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('test-btn-req').addEventListener('click', trackButtonClick);
+    });
 </script>
   </body>
 </html>
