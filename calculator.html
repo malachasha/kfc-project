@@ -369,8 +369,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         if (variant === 'red') {
             button.style.backgroundColor = 'red';
         } else if (variant === 'black') {
-            button.style.backgroundColor = 'black';
-        }
+            button.style.backgroundColor = 'gray';
+        } else if (variant === 'control') {
+                    button.style.backgroundColor = 'black'; // Assuming 'control' means default black color
+                }
         // Store variant information in the button element for later use
         button.dataset.variant = variant;
     }
