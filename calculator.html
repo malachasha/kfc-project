@@ -295,7 +295,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </tfoot>
       </table>
       <h1 class="calculate-header">Have a question? Write to us!</h1>
-      <button><a href="contact.html#form">REQUEST A QUOTE</a></button> 
+      <button id="test-btn-req"><a href="contact.html#form">REQUEST A QUOTE</a></button> 
       <div class="space"></div>
       
 
@@ -357,5 +357,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </footer>
     </div>
     <script src="/src/calc.js"></script>
+    <script>
+  // Initialize PostHog
+  posthog.init('phc_A4euCk8t6ZbGLUmZM6tEfI35SA0eURsoKdArAJPaWGf', { api_host: 'https://app.posthog.com' });
+
+  // Function to track button clicks
+  function trackButtonClick() {
+    posthog.capture('button_click', {
+      'button_color': document.getElementById('test-btn-req').style.backgroundColor
+    });
+  }
+
+  // Attach the event listener to the button
+  document.getElementById('test-btn-req').addEventListener('click', trackButtonClick);
+</script>
   </body>
 </html>
