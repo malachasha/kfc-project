@@ -385,6 +385,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         break;
                 }
             }
+   
+            document.getElementById('test-btn-req').addEventListener('click', function() {
+                console.log("Button clicked");
+                posthog.capture('button_click', {
+                    button_color: posthog.getFeatureFlag('request-color')
+                });
+            });
 
             // Override feature flag for testing
             //console.log("Overriding feature flag for testing");
